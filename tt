@@ -5,7 +5,7 @@ git add README.md
 git commit -m "first commit"
 
 # можем хранить с логином.паролем
-git remote add origin https://shab2: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@github.com/shab2/shab2.profile.git
+git remote add origin https://shab2:$GIT_TOKEN@github.com/shab2/shab2.profile.git
 
 # можем залогиниться на git на все время действия токена
 gh auth login
