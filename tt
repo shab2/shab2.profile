@@ -1,9 +1,14 @@
- git config --global user.email "shab2@mail.ru"
- git config --global user.name "shab2"
- git init
- git add README.md
- git commit -m "first commit"
- git branch -M main
- git remote add origin https://github.com/shab2/shab2.profile.git
- git push -u origin main
- gh auth login
+git config --global user.email "shab2@mail.ru"
+git config --global user.name "shab2"
+git init
+git add README.md
+git commit -m "first commit"
+
+# можем хранить с логином.паролем
+git remote add origin https://shab2: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@github.com/shab2/shab2.profile.git
+
+# можем залогиниться на git на все время действия токена
+gh auth login
+git remote add origin https://github.com/shab2/shab2.profile.git
+
+git push -u origin main
