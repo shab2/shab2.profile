@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+#
+# Настройки среды ос
+# - RHEL8
+# - Debian11 
+# vim
+
+function apply_profile {
+
+  [ -f ~/.bashrc  ] && [ ! -f .bashrc.save  ] && { mv .bashrc  .bashrc.save;   ln -s /opt/shab2.profile/.bashrc  ~; }
+  [ -f ~/.inputrc ] && [ ! -f .inputrc.save ] && { mv .inputrc .inputrc.save;  ln -s /opt/shab2.profile/.inputrc ~; }
+  [ -f ~/.vimrc   ] && [ ! -f .vimrc.save   ] && { mv .vimrc   .vimrc.save;    ln -s /opt/shab2.profile/.vimrc   ~; }
+}
+
+function revert_profile {
+  [ -f ~/.bashrc.save  ] && { rm -f .bashrc;  mv .bashrc.save  .bashrc;  }
+  [ -f ~/.inputrc.save ] && { rm -f .inputrc; mv .inputrc.save .inputrc; }
+  [ -f ~/.vimrc.save   ] && { rm -f .vimrc;   mv .vimrc.save   .vimrc;   }
+}
+
